@@ -1,0 +1,22 @@
+div.header {
+    font-size: 48px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    border-bottom: 4px solid #EEE;
+    color: #333;
+    height: 100px;
+    line-height: 100px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Vollkorn', serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+div.post {
+    font-family: 'Vollkorn', serif;
+    font-size: 24px;
+    width: 800px;
+    margin: 0 auto;
+}
