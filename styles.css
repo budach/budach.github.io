@@ -17,6 +17,24 @@ div.header {
 div.post {
     font-family: 'Vollkorn', serif;
     font-size: 24px;
-    width: 800px;
+    width: 1024px;
     margin: 0 auto;
+}
+
+img.wrapRight {
+    float: right;
+    margin: 10px;
+}
+
+img.wrapLeft {
+    float: left;
+    margin: 10px;
+}
+
+img.wrapCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
