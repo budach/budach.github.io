@@ -1,40 +1,52 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Hello World</title>
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Vollkorn">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-		<link rel="stylesheet" href="styles.css">
-	</head>
-	<body>
-		<div class="header">
-			Hello world
-		</div>
-		<div class="post">
+div.header {
+    font-size: 48px;
+    width: 900px;
+    margin: 0 auto;
+    border-bottom: 4px solid #DDD;
+    color: #333;
+    height: 90px;
+    line-height: 90px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-family: 'Vollkorn', serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
 
-<img class="wrapRight" src="images/test.png" width=60%/>
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-<pre><code>#include &lt;boost/regex.hpp>
-#include &lt;iostream>
-#include &lt;string>
+div.footer {
+    width: 900px;
+    margin: 0 auto;
+    height: 90px;
+}
 
-int main()
-{
-    std::string line;
-    boost::regex pat( "^Subject: (Re: |Aw: )*(.*)" );
+div.post {
+    font-family: 'Vollkorn', serif;
+    font-size: 24px;
+    width: 900px;
+    margin: 0 auto;
+    text-align: justify;
+}
 
-    while (std::cin)
-    {
-        std::getline(std::cin, line);
-        boost::smatch matches;
-        if (boost::regex_match(line, matches, pat))
-            std::cout << matches[2] << std::endl;
-    }
-}</code></pre>
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+img.wrapRight {
+    float: right;
+    margin: 10px;
+}
 
-		</div>
-		<div class = 'footer'/>
-	</body>
-</html>
+img.wrapLeft {
+    float: left;
+    margin: 10px;
+}
+
+img.wrapCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Source Code Pro';
+    font-size: 20px;
+    color: #777;
+}
