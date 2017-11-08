@@ -1,6 +1,6 @@
 # Class One_Hot_Encoder
 
-The One_Hot_Encoder class provides functions to encode a string over a given alphabet into an integer matrix of shape (len(string), len(alphabet)) where each row represents a positionin the string and each column represents a character from the alphabet. Each row has exactly one 1 at the matching alphabet character and consists of 0s otherwise.
+The One_Hot_Encoder class provides functions to encode a string over a given alphabet into an integer matrix of shape (len(string), len(alphabet)) where each row represents a position in the string and each column represents a character from the alphabet. Each row has exactly one 1 at the matching alphabet character and consists of 0s otherwise.
 
 ## Methods - Overview
 
@@ -12,9 +12,9 @@ The One_Hot_Encoder class provides functions to encode a string over a given alp
 ## \_\_init\_\_
 
 ``` python
-def \_\_init\_\_(self, alphabet)
+def __init__(self, alphabet)
 ```
-Initialize the object with an alphabet.
+Initialize the object with an alphabet. 
 
 | parameter | type | description |
 |:-|:-|:-|
@@ -24,7 +24,7 @@ Initialize the object with an alphabet.
 ``` python
 def encode(self, sequence)
 ```
-Encode a sequence into a one-hot integer matrix.  The sequence should only contain characters from the alphabet provided to \_\_init\_\_.
+Encode a sequence into a one-hot integer matrix.  The sequence should only contain characters from the alphabet provided to \_\_init\_\_. 
 
 | parameter | type | description |
 |:-|:-|:-|
@@ -32,18 +32,19 @@ Encode a sequence into a one-hot integer matrix.  The sequence should only conta
 
 | returns | type | description |
 |:-|:-|:-|
-| one\_hot | numpy.ndarray | A numpy array with shape (len(sequence), len(alphabet)). |
+| one_hot | numpy.ndarray | A numpy array with shape (len(sequence), len(alphabet)). |
 ## decode
 
 ``` python
-def decode(self, one\_hot)
+def decode(self, one_hot)
 ```
-Decode a one-hot integer matrix into the original sequence.
+Decode a one-hot integer matrix into the original sequence. 
 
 | parameter | type | description |
 |:-|:-|:-|
-| one\_hot | numpy.ndarray | A one-hot matrix (e.g. as created by the encode function). |
+| one_hot | numpy.ndarray | A one-hot matrix (e.g. as created by the encode function). |
 
 | returns | type | description |
 |:-|:-|:-|
 | sequence | str | The sequence that was represented by the one-hot matrix. |
+
