@@ -1,3 +1,7 @@
+# Class One_Hot_Encoder
+
+The One_Hot_Encoder class provides functions to encode a string over a given alphabet into an integer matrix of shape (len(string), len(alphabet)) where each row represents a positionin the string and each column represents a character from the alphabet. Each row has exactly one 1 at the matching alphabet character and consists of 0s otherwise.
+
 ## Methods - Overview
 
 | name | description |
