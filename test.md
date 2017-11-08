@@ -10,7 +10,7 @@ The One_Hot_Encoder class provides functions to encode a string over a given alp
 | encode | Encode a sequence into an one-hot integer matrix. |
 | decode | Decode a one-hot integer matrix into the original sequence. |
 
-### \_\_init\_\_ 
+## \_\_init\_\_ 
 
 ``` python
 def __init__(self, alphabet) 
@@ -22,7 +22,7 @@ Initialize the object with an alphabet.
 | alphabet | str | The alphabet that will be used for encoding/decoding (e.g. "ACGT"). |
 
 
-### encode 
+## encode 
 
 ``` python
 def encode(self, sequence)
@@ -37,7 +37,7 @@ Encode a sequence into an one-hot integer matrix. The sequence should only conta
 |:-|:-|:-|
 | one_hot | numpy.ndarray | A numpy array with shape (len(sequence), len(alphabet)). |
 
-### decode 
+## decode 
 
 ``` python
 def decode(self, one_hot)
