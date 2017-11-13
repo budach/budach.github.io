@@ -1,35 +1,33 @@
-# Class Grid_Search - Documentation
+# Class Data - Documentation
 
-The Grid_Search class provides a simple way to execute a hyperparameter tuning for the convolutional neural network model. Have a look at the Model documentation for an overview of all available hyperparameters. The tuning returns the best model (in terms of highest ROC-AUC) and an overview of all trained models.
+The Data class provides a convenient way to handle sequence data for different classes. Sequence data is automatically converted into one-hot encoded matrices and split into training/validation/test sets. The data object can then be passed to Grid_Search or Model objects for easy training and evaluation.  bla bla dna und rna input file specs
 
 ## Methods - Overview
 
 | name | description |
 |:-|:-|
-| \_\_init\_\_ | Initialize the object with a collection of parameter values. |
-| train | Train all models and return the best one. |
+| \_\_init\_\_ | Initialize the object by providing sequence files and an alphabet. |
+| train\_val\_test\_split | bla |
 ## \_\_init\_\_
 
 ``` python
-def __init__(self, params)
+def __init__(self, class_files, alphabet)
 ```
-Initialize the object with a collection of parameter values.  For example: providing {'conv\_num': [1,2,3], 'kernel\_num': [20,50]} will result in training 6 different models (all possible combinations of the provided values) when the train() method is called later on. Parameters that are not provided here will hold their default values in all 6 models. 
+Initialize the object by providing sequence files and an alphabet.  If the goal is to do single-label classification a list of fasta files must be provided (one file per class, the first file will correspond to 'class\_0' etc.). In this case fasta headers are ignored. If the goal is multi-label classification a single fasta file must be provided and headers must indicate class membership as a comma-separated list (e.g. header '>0,3,4' means that the sequence belongs to class0, 3 and 4). 
 
 | parameter | type | description |
 |:-|:-|:-|
-| params | dict | A dict containing parameter names as keys and corresponding values as lists. |
-## train
+| class_files | str or [str] | bla |
+| alphabet | str or tuple(str,str) | bla |
+## train\_val\_test\_split
 
 ``` python
-def train(self, data, verbose = True)
+def train_val_test_split(self, portion_train, portion_val, seed = None)
 ```
-Train all models and return the best one.  Models are evaluated and ranked according to their ROC-AUC on a validation data set. 
+bla  bla 
 
 | parameter | type | description |
 |:-|:-|:-|
-| data | placeholder.Data | A Data object providing training and validation data sets. |
-| verbose | bool | If True, progress information will be printed throughout the training. |
-
-| returns | type | description |
-|:-|:-|:-|
-| results | tuple(placeholder.Model, str) | The best performing model and an overview table of all models are returned. |
+| portion_train | float | bla |
+| portion_val | float | bla |
+| seed | int | bla |
