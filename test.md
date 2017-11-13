@@ -1,70 +1,57 @@
-# Class Data - Documentation
+# Class One_Hot_Encoder - Documentation
 
-The Data class provides a convenient way to handle DNA and RNA sequence and structure data for multiple classes. Sequence and structure data are automatically converted into one-hot encoded matrices and split into training/validation/test sets. The data object can then be passed to Grid_Search or Model objects for easy training and evaluation.
+The One_Hot_Encoder class provides functions to encode a string over a given alphabet into an integer matrix of shape (len(string), len(alphabet)) where each row represents a position in the string and each column represents a character from the alphabet. Each row has exactly one 1 at the matching alphabet character and consists of 0s otherwise.
 
 ## Methods - Overview
 
 | name | description |
 |:-|:-|
-| \_\_init\_\_ | Initialize the object and split the data into 70%/15%/15% training/validation/test. |
-| train\_val\_test\_split | Randomly split the data into training, validation and test set. |
-| get\_summary | Get an overview of the training/validation/test data for each class. |
+| \_\_init\_\_ | Initialize the object with an alphabet. |
+| encode | Encode a sequence into a one-hot integer matrix. |
+| decode | Decode a one-hot integer matrix into the original sequence. |
 ## \_\_init\_\_
 
 ``` python
-def __init__(self, class_files, alphabet)
+def __init__(self, alphabet)
 ```
-Initialize the object and split the data into 70%/15%/15% training/validation/test. 
-
- If the goal is to do single-label classification a list of fasta files must be provided (one file per class, the first file will correspond to 'class\_0' etc.). In this case fasta headers are ignored. If the goal is multi-label classification a single fasta file must be provided and headers must indicate class membership as a comma-separated list (e.g. header '\>0,2' means that the sequence belongs to class 0 and 2). 
-
- For sequence-only files fasta entries have no format restrictions. For sequence-structure files each sequence and structure must span a single line, e.g.: 
-
-  \>0,2  
-  CCCCAUAGGGG  
-  ((((...)))) (-3.3)  
-  SSSSHHHSSSS  
- 
-
- This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. **Important: All sequences in all files must have the same length.** 
-
- The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided and for sequence-structure files a tuple (('ACGU', 'HIMS') to use the annotated structures or ('ACGU', '().') to use dot-bracket structures). 
+Initialize the object with an alphabet. 
 
 
 
 | parameter | type | description |
 |:-|:-|:-|
-| class_files | str or [str] | A fasta file (multi-label) or a list of fasta files (single-label). |
-| alphabet | str or tuple(str,str) | A string for sequence-only files and a tuple for sequence-structure files. |
-## train\_val\_test\_split
+| alphabet | str | The alphabet that will be used for encoding/decoding (e.g. "ACGT"). |
+## encode
 
 ``` python
-def train_val_test_split(self, portion_train, portion_val, seed = None)
+def encode(self, sequence)
 ```
-Randomly split the data into training, validation and test set. 
+Encode a sequence into a one-hot integer matrix. 
 
- Example: setting portion\_train = 0.6 and portion\_val = 0.3 will set aside 60% of the data for training, 30% for validation and the remaining 10% for testing. Use the seed parameter to get reproducible splits. 
+ The sequence should only contain characters from the alphabet provided to \_\_init\_\_. 
 
 
 
 | parameter | type | description |
 |:-|:-|:-|
-| portion_train | float | Portion of data that should be used for training (<1.0) |
-| portion_val | float | Portion of data that should be used for validation (<1.0) |
-| seed | int | Seed for the random number generator. |
-## get\_summary
-
-``` python
-def get_summary(self)
-```
-Get an overview of the training/validation/test data for each class. 
-
-
-
-| parameter | type | description |
-|:-|:-|:-|
-|  |  |  |
+| sequence | str | The sequence that should be encoded. |
 
 | returns | type | description |
 |:-|:-|:-|
-| summary | str | A tabular overview of every class. |
+| one_hot | numpy.ndarray | A numpy array with shape (len(sequence), len(alphabet)). |
+## decode
+
+``` python
+def decode(self, one_hot)
+```
+Decode a one-hot integer matrix into the original sequence. 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| one_hot | numpy.ndarray | A one-hot matrix (e.g. as created by the encode function). |
+
+| returns | type | description |
+|:-|:-|:-|
+| sequence | str | The sequence that is represented by the one-hot matrix. |
