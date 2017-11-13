@@ -6,14 +6,14 @@ The Data class provides a convenient way to handle DNA and RNA sequence and stru
 
 | name | description |
 |:-|:-|
-| \_\_init\_\_ | Initialize the object by providing sequence files and an alphabet. |
+| \_\_init\_\_ | Initialize the object by providing sequence files, an alphabet and by splitting the data into 70%/15%/15% training/validation/test. |
 | train\_val\_test\_split | bla |
 ## \_\_init\_\_
 
 ``` python
 def __init__(self, class_files, alphabet)
 ```
-Initialize the object by providing sequence files and an alphabet. 
+Initialize the object by providing sequence files, an alphabet and by splitting the data into 70%/15%/15% training/validation/test. 
 
  If the goal is to do single-label classification a list of fasta files must be provided (one file per class, the first file will correspond to 'class\_0' etc.). In this case fasta headers are ignored. If the goal is multi-label classification a single fasta file must be provided and headers must indicate class membership as a comma-separated list (e.g. header '\>0,2' means that the sequence belongs to class 0 and 2). 
 
@@ -27,7 +27,7 @@ Initialize the object by providing sequence files and an alphabet.
 
  This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. Important: All sequences in all files must have the same length. 
 
- The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided, for sequence-structure files a tuple (('ACGU', 'HIMS') to use the annotated structures or ('ACGU', '().') to use dot-bracket structures). 
+ The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided and for sequence-structure files a tuple (('ACGU', 'HIMS') to use the annotated structures or ('ACGU', '().') to use dot-bracket structures). 
 
 
 
