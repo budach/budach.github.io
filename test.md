@@ -1,13 +1,13 @@
 # Class Data - Documentation
 
-The Data class provides a convenient way to handle DNA and RNA sequence and structure data for different classes. Sequence and structure data are automatically converted into one-hot encoded matrices and split into training/validation/test sets. The data object can then be passed to Grid_Search or Model objects for easy training and evaluation.
+The Data class provides a convenient way to handle DNA and RNA sequence and structure data for multiple classes. Sequence and structure data are automatically converted into one-hot encoded matrices and split into training/validation/test sets. The data object can then be passed to Grid_Search or Model objects for easy training and evaluation.
 
 ## Methods - Overview
 
 | name | description |
 |:-|:-|
 | \_\_init\_\_ | Initialize the object and split the data into 70%/15%/15% training/validation/test. |
-| train\_val\_test\_split | bla |
+| train\_val\_test\_split | Randomly split the data into training, validation and test set. |
 ## \_\_init\_\_
 
 ``` python
@@ -40,14 +40,14 @@ Initialize the object and split the data into 70%/15%/15% training/validation/te
 ``` python
 def train_val_test_split(self, portion_train, portion_val, seed = None)
 ```
-bla 
+Randomly split the data into training, validation and test set. 
 
- bla 
+ Example: setting portion\_train = 0.6 and portion\_val = 0.3 will set aside 60% of the data for training, 30% for validation and the remaining 10% for testing. Use the seed parameter to get reproducible splits. 
 
 
 
 | parameter | type | description |
 |:-|:-|:-|
-| portion_train | float | bla |
-| portion_val | float | bla |
-| seed | int | bla |
+| portion_train | float | Portion of data that should be used for training (<1.0) |
+| portion_val | float | Portion of data that should be used for validation (<1.0) |
+| seed | int | Seed for the random number generator. |
