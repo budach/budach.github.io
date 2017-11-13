@@ -25,9 +25,7 @@ Initialize the object by providing sequence files and an alphabet.
   SSSSHHHSSSS  
  
 
- This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. 
-
- Important: All sequences in all files must have the same length. 
+ This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. Important: All sequences in all files must have the same length. 
 
  The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided, for sequence-structure files a tuple (('ACGU', 'HIMS') to use the annotated structures or ('ACGU', '().') to use dot-bracket structures). 
 
