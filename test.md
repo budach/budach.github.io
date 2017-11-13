@@ -8,6 +8,7 @@ The Data class provides a convenient way to handle DNA and RNA sequence and stru
 |:-|:-|
 | \_\_init\_\_ | Initialize the object and split the data into 70%/15%/15% training/validation/test. |
 | train\_val\_test\_split | Randomly split the data into training, validation and test set. |
+| get\_summary | Get an overview of the training/validation/test data for each class. |
 ## \_\_init\_\_
 
 ``` python
@@ -25,7 +26,7 @@ Initialize the object and split the data into 70%/15%/15% training/validation/te
   SSSSHHHSSSS  
  
 
- This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. Important: All sequences in all files must have the same length. 
+ This kind of format is the default output of RNAfold. The third line containing the annotated structure string can be omitted if you want to do the training on the dot-bracket strings. **Important: All sequences in all files must have the same length.** 
 
  The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided and for sequence-structure files a tuple (('ACGU', 'HIMS') to use the annotated structures or ('ACGU', '().') to use dot-bracket structures). 
 
@@ -51,3 +52,19 @@ Randomly split the data into training, validation and test set.
 | portion_train | float | Portion of data that should be used for training (<1.0) |
 | portion_val | float | Portion of data that should be used for validation (<1.0) |
 | seed | int | Seed for the random number generator. |
+## get\_summary
+
+``` python
+def get_summary(self)
+```
+Get an overview of the training/validation/test data for each class. 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+|  |  |  |
+
+| returns | type | description |
+|:-|:-|:-|
+| summary | str | A tabular overview of every class. |
