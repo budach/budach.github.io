@@ -1,49 +1,35 @@
-# Class One_Hot_Encoder - Documentation
+# Class Grid_Search - Documentation
 
-The One_Hot_Encoder class provides functions to encode a string over a given alphabet into an integer matrix of shape (len(string), len(alphabet)) where each row represents a position in the string and each column represents a character from the alphabet. Each row has exactly one 1 at the matching alphabet character and consists of 0s otherwise.
+The Grid_Search class provides a simple way to execute a hyperparameter tuning for the convolutional neural network model. Have a look at the Model documentation for an overview of all available hyperparameters. The tuning returns the best model (in terms of highest ROC-AUC) and an overview of all trained models.
 
 ## Methods - Overview
 
 | name | description |
 |:-|:-|
-| \_\_init\_\_ | Initialize the object with an alphabet. |
-| encode | Encode a sequence into a one-hot integer matrix. |
-| decode | Decode a one-hot integer matrix into the original sequence. |
+| \_\_init\_\_ | Initialize the object with a collection of parameter values. |
+| train | Train all models and return the best one. |
 ## \_\_init\_\_
 
 ``` python
-def __init__(self, alphabet)
+def __init__(self, params)
 ```
-Initialize the object with an alphabet. 
+Initialize the object with a collection of parameter values.  For example: providing {'conv\_num': [1,2,3], 'kernel\_num': [20,50]} will result in training 6 different models (all possible combinations of the provided values) when the train() method is called later on. Parameters that are not provided here will hold their default values in all 6 models. 
 
 | parameter | type | description |
 |:-|:-|:-|
-| alphabet | str | The alphabet that will be used for encoding/decoding (e.g. "ACGT"). |
-## encode
+| params | dict | A dict containing parameter names as keys and corresponding values as lists. |
+## train
 
 ``` python
-def encode(self, sequence)
+def train(self, data, verbose = True)
 ```
-Encode a sequence into a one-hot integer matrix.  The sequence should only contain characters from the alphabet provided to \_\_init\_\_. 
+Train all models and return the best one.  Models are evaluated and ranked according to their ROC-AUC on a validation data set. 
 
 | parameter | type | description |
 |:-|:-|:-|
-| sequence | str | The sequence that should be encoded. |
+| data | placeholder.Data | A Data object providing training and validation data sets. |
+| verbose | bool | If True, progress information will be printed throughout the training. |
 
 | returns | type | description |
 |:-|:-|:-|
-| one_hot | numpy.ndarray | A numpy array with shape (len(sequence), len(alphabet)). |
-## decode
-
-``` python
-def decode(self, one_hot)
-```
-Decode a one-hot integer matrix into the original sequence. 
-
-| parameter | type | description |
-|:-|:-|:-|
-| one_hot | numpy.ndarray | A one-hot matrix (e.g. as created by the encode function). |
-
-| returns | type | description |
-|:-|:-|:-|
-| sequence | str | The sequence that is represented by the one-hot matrix. |
+| results | tuple(placeholder.Model, str) | The best performing model and an overview table of all models are returned. |
