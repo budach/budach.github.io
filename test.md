@@ -13,7 +13,15 @@ The Data class provides a convenient way to handle sequence data for different c
 ``` python
 def __init__(self, class_files, alphabet)
 ```
-Initialize the object by providing sequence files and an alphabet.  If the goal is to do single-label classification a list of fasta files must be provided (one file per class, the first file will correspond to 'class\_0' etc.). In this case fasta headers are ignored. If the goal is multi-label classification a single fasta file must be provided and headers must indicate class membership as a comma-separated list (e.g. header '>0,2' means that the sequence belongs to class 0 and 2).  Important: All sequences must have the same length.  The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided, for sequence-structure files a tuple (('ACGU', 'HIMS') or ('ACGU', '().')). 
+Initialize the object by providing sequence files and an alphabet. 
+
+ If the goal is to do single-label classification a list of fasta files must be provided (one file per class, the first file will correspond to 'class\_0' etc.). In this case fasta headers are ignored. If the goal is multi-label classification a single fasta file must be provided and headers must indicate class membership as a comma-separated list (e.g. header '>0,2' means that the sequence belongs to class 0 and 2). 
+
+ Important: All sequences must have the same length. 
+
+ The provided alphabet must match the content of the fasta files. For sequence-only files a single string ('ACGT' or 'ACGU') should be provided, for sequence-structure files a tuple (('ACGU', 'HIMS') or ('ACGU', '().')). 
+
+
 
 | parameter | type | description |
 |:-|:-|:-|
@@ -24,7 +32,11 @@ Initialize the object by providing sequence files and an alphabet.  If the goal 
 ``` python
 def train_val_test_split(self, portion_train, portion_val, seed = None)
 ```
-bla  bla 
+bla 
+
+ bla 
+
+
 
 | parameter | type | description |
 |:-|:-|:-|
