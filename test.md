@@ -16,8 +16,8 @@ The Model class represents a convolutional neural network and provides functions
   | dropout\_dense | 0.4 | dropout portion after dense layers |  
   | batch\_size | 256 | batch size during training |  
   | learning\_rate | 0.0005 | learning rate of Adam optimizer |  
-  | patience\_lr | 5 | number of epochs without validation loss improvement before halving the learning rate |  
-  | patience\_stopping | 15 | number of epochs without validation loss improvement before stopping the training |  
+  | patience\_lr | 5 | number of epochs without validation loss improvement before halving learning rate |  
+  | patience\_stopping | 15 | number of epochs without validation loss improvement before stopping training |  
   | epochs | 500 | maximum number of training epochs |  
   | kernel\_constraint | 3 | max-norm weight constraint |  
  
