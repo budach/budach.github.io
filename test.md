@@ -1,7 +1,6 @@
 # Class Model - Documentation
 
-The Model class represents a convolutional neural network and provides functions for network training and visualization of learned features (sequence/structure motifs). The basic structure of the network consists of a variable number of convolutional and max pooling layers followed by a variable number of dense layers. These layers are interspersed by dropout layers after the input layer and after every max pooling and dense layer. The network can be tuned using the following hyperparameters which can be provided through the  params' parameter of the \_\_init\_\_ function:  
- 
+The Model class represents a convolutional neural network and provides functions for network training and visualization of learned features (sequence/structure motifs). The basic structure of the network consists of a variable number of convolutional and max pooling layers followed by a variable number of dense layers. These layers are interspersed by dropout layers after the input layer and after every max pooling and dense layer. The network can be tuned using the following hyperparameters which can be provided through the 'params' parameter of the \_\_init\_\_ function: 
 
   | parameter | default | description |  
   |:-|:-|:-|  
