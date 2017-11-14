@@ -48,7 +48,7 @@ Initialize the model with the given parameters.
 | parameter | type | description |
 |:-|:-|:-|
 | params | dict | A dict containing hyperparameter values. |
-| data | placeholder.Data | The Data object the model should be trainined on. |
+| data | placeholder.Data | The Data object the model should be trained on. |
 ## train
 
 ``` python
@@ -69,6 +69,8 @@ Train the model.
 ``` python
 def print_summary(self)
 ```
+Print an overview of the network architecture.
+
 ## predict
 
 ``` python
