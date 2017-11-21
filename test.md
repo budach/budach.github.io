@@ -1,20 +1,87 @@
-# File utils_misc.py - Documentation
+# File utils.py - Documentation
 
 ## Methods - Overview
 
 | name | description |
 |:-|:-|
-| annotate\_structures | Annote secondary structure predictions with structural contexts. |
+| save\_model | Save a placeholder.Model object. |
+| load\_model | Load a placeholder.Model object. |
+| save\_data | Save a placeholder.Data object. |
+| load\_data | Load a placeholder.Data object. |
+| annotate\_structures | Annotate secondary structure predictions with structural contexts. |
 | predict\_structures | Predict secondary structures for RNA sequences. |
 | get\_performance\_report | Get a performance overview of a classifier. |
+| plot\_roc | Get ROC curves for every class. |
+| plot\_prec\_recall | Get Precision-Recall curves for every class. |
 | save\_as\_meme | Save sequence (or structure) motifs in MEME format. |
 | run\_tomtom | Compare a MEME file against a database using TomTom. |
+## save\_model
+
+``` python
+def save_model(model, file_path)
+```
+Save a placeholder.Model object. 
+
+ This function creates two files: a pickled version of the placeholder.Model object and an hdf5 file of the actual keras model (e.g. if file\_path is 'model' two files are created: 'model' and 'model.h5') 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| model | placeholder.Model | A Model object. |
+| file_path | str | A file name. |
+## load\_model
+
+``` python
+def load_model(file_path)
+```
+Load a placeholder.Model object. 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| file_path | str | A file containing a pickled placeholder.Model object (file_path.h5 must also exist, see save_model()). |
+
+| returns | type | description |
+|:-|:-|:-|
+| model | placeholder.Model | A Model object. |
+## save\_data
+
+``` python
+def save_data(data, file_path)
+```
+Save a placeholder.Data object. 
+
+ The object will be pickled to disk. 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| file_path | str | A file name. |
+## load\_data
+
+``` python
+def load_data(file_path)
+```
+Load a placeholder.Data object. 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| file_path | str | A file containing a pickled placeholder.Data object. |
+
+| returns | type | description |
+|:-|:-|:-|
+| data | placeholder.Data | The Data object loaded from file. |
 ## annotate\_structures
 
 ``` python
 def annotate_structures(input_file, output_file)
 ```
-Annote secondary structure predictions with structural contexts. 
+Annotate secondary structure predictions with structural contexts. 
 
  Given dot-bracket strings this function will annote every character as either 'H' (hairpin), 'S' (stem), 'I' (internal loop) or 'M' (multi loop). The input file must be a fasta formatted file and each sequence and structure must span a single line: 
 
@@ -85,6 +152,38 @@ Get a performance overview of a classifier.
 | returns | type | description |
 |:-|:-|:-|
 | report | str | Summary table of the above mentioned performance measurements. |
+## plot\_roc
+
+``` python
+def plot_roc(labels, predictions, file_path)
+```
+Get ROC curves for every class. 
+
+ In the case of more than two classes the comparions will be performed in a 1 vs. rest approach (i.e. you get one curve per class). 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| labels | numpy.ndarray | A binary matrix of shape (num sequences, num classes) containing the true labels. |
+| predictions | numpy.ndarray | A matrix of shape (num sequences, num classes) containing predicted probabilites. |
+| file_path | str | The file the plot should be saved to. |
+## plot\_prec\_recall
+
+``` python
+def plot_prec_recall(labels, predictions, file_path)
+```
+Get Precision-Recall curves for every class. 
+
+ In the case of more than two classes the comparions will be performed in a 1 vs. rest approach (i.e. you get one curve per class). 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| labels | numpy.ndarray | A binary matrix of shape (num sequences, num classes) containing the true labels. |
+| predictions | numpy.ndarray | A matrix of shape (num sequences, num classes) containing predicted probabilites. |
+| file_path | str | The file the plot should be saved to. |
 ## save\_as\_meme
 
 ``` python
