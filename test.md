@@ -34,7 +34,7 @@ Load a placeholder.Model object.
 
 | parameter | type | description |
 |:-|:-|:-|
-| file_path | str | An existing file (the file file_path.h5 must also exist, see save_model()). |
+| file_path | str | A file containing a pickled placeholder.Model object (file_path.h5 must also exist, see save_model()). |
 
 | returns | type | description |
 |:-|:-|:-|
