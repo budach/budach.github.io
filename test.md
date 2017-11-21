@@ -4,9 +4,25 @@
 
 | name | description |
 |:-|:-|
+| save\_model | Save a placeholder.Model object. |
 | load\_model | Load a placeholder.Model object. |
 | save\_data | Save a placeholder.Data object. |
 | load\_data | Load a placeholder.Data object. |
+## save\_model
+
+``` python
+def save_model(model, file_path)
+```
+Save a placeholder.Model object. 
+
+ This function creates two files: a pickled version of the placeholder.Model object and an hdf5 file of the actual keras model (e.g. if file\_path is 'model' two files are created: 'model' and 'model.h5') 
+
+
+
+| parameter | type | description |
+|:-|:-|:-|
+| model | placeholder.Model | A Model object. |
+| file_path | str | A file name. |
 ## load\_model
 
 ``` python
