@@ -1,13 +1,13 @@
 ## pysster: A Sequence-STructure ClassifiER
 ### Learning Sequence and Structure Motifs in DNA and RNA Sequences using Convolutional Neural Networks
 
-pysster is a python packge for training and interpretation of convolutional neural networks. The package can be applied to both DNA and RNA to classify sets of sequences by learning sequence and secondary structure motifs. Multi-class and single-label or multi-label classification are possible. It offers an automated hyperparameter optimization and options to visualize learned motifs along with information about their positional and class enrichment. The package runs seamlessly on CPU and GPU and provides a simple interface to train and evaluate a network with a handful lines of code.
+pysster is a python packge for training and interpretation of convolutional neural networks. The package can be applied to both DNA and RNA to classify sets of sequences by learning sequence and secondary structure motifs. It can handle multi-class and single-label or multi-label classifications. It offers an automated hyperparameter optimization and options to visualize learned motifs along with information about their positional and class enrichment. The package runs seamlessly on CPU and GPU and provides a simple interface to train and evaluate a network with a handful lines of code.
 
-The preprint is available on [bioRxiv](https://link).
+The preprint can be found on bioRxiv in the near future.
 
 ### Installation
 
-pysster is compatible with Python 3.3+ and can be installed via pip or from github.
+pysster is compatible with Python 3.3+ and can be installed via pip or github.
 
 **Install via pip:**
 
