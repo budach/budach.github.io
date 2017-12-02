@@ -1,4 +1,4 @@
-## pysster: A Sequence-STructure ClassifiER
+## pysster: a Sequence-STructure ClassifiER
 ### Learning Sequence and Structure Motifs in DNA and RNA Sequences using Convolutional Neural Networks
 
 pysster is a python packge for training and interpretation of convolutional neural networks. The package can be applied to both DNA and RNA to classify sets of sequences by learning sequence and secondary structure motifs. It can handle multi-class and single-label or multi-label classifications. It offers an automated hyperparameter optimization and options to visualize learned motifs along with information about their positional and class enrichment. The package runs seamlessly on CPU and GPU and provides a simple interface to train and evaluate a network with a handful lines of code.
@@ -23,14 +23,14 @@ python3 setup.py install
 
 ### Using the GPU
 
-By default, pysster will install the CPU version of TensorFlow. If you want to use your NVIDIA GPU (which is recommended for large data sets or grid searchs) make sure that your CUDA and cuDNN drivers are correctly installed and then install the GPU version of tensorflow:
+pysster depends on TensorFlow and by default the CPU version of TensorFlow will be installed. If you want to use your NVIDIA GPU (which is recommended for large data sets or grid searchs) make sure that your CUDA and cuDNN drivers are correctly installed and then install the GPU version of tensorflow:
 
 ```sh
 pip3 uninstall tensorflow
 pip3 install tensorflow-gpu
 ```
 
-By the time of writing the most recent TensorFlow version is 1.4.0 and requires CUDA 8 and cuDNN 6. You can always check the required version in the TensorFlow [release notes](https://github.com/tensorflow/tensorflow/releases).
+By the time of writing the most recent TensorFlow version is 1.4.0 and requires CUDA 8 and cuDNN 6. You can always check the required versions in the TensorFlow [release notes](https://github.com/tensorflow/tensorflow/releases).
 
 
 ### Documentation
